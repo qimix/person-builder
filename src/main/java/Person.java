@@ -2,8 +2,6 @@ import java.util.Optional;
 import java.util.OptionalInt;
 
 public class Person {
-    private Optional<String> firstName;
-
     protected final String name;
     protected final String surname;
     protected OptionalInt age;
