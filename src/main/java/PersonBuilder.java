@@ -30,15 +30,15 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        Person person;
-        if (age == 0) {
-            person = new Person(name, surname);
-        } else {
-            person = new Person(name, surname, age);
-        }
-        if (address != null) {
-            person.setAddress(address);
-        }
-        return person;
+            Person person;
+            if (age == 0) {
+                person = new Person(name, surname);
+            } else {
+                person = new Person(name, surname, age);
+            }
+            if (address != null) {
+                person.setAddress(address);
+            }
+            return person;
     }
 }

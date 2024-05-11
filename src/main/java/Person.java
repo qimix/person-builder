@@ -25,18 +25,23 @@ public class Person {
     public boolean hasAge() {
         return getAge().isPresent();
     }
+
     public boolean hasAddress() {
         return false ? getAddress().isEmpty() : true;
     }
+
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public OptionalInt getAge() {
         return age;
     }
+
     public String getAddress() {
         return address.get();
     }
@@ -46,7 +51,11 @@ public class Person {
     }
 
     public void happyBirthday() {
-        age = OptionalInt.of(getAge().getAsInt() + 1);
+        if (hasAge()) {
+            age = OptionalInt.of(getAge().getAsInt() + 1);
+        } else {
+            System.out.println("Возраст не известен");
+        }
     }
 
     @Override
