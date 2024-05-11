@@ -1,8 +1,8 @@
 public class PersonBuilder {
-    String name;
-    String surname;
-    int age;
-    String address;
+    protected String name;
+    protected String surname;
+    protected int age;
+    protected String address;
 
     public PersonBuilder() {
         age = 0;
