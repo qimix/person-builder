@@ -19,7 +19,10 @@ public class Person {
     }
 
     public PersonBuilder newChildBuilder() {
-        return new PersonBuilder();
+        return new PersonBuilder()
+                .setSurname(getSurname())
+                .setAddress(getAddress())
+                .setAge(0);
     }
 
     public boolean hasAge() {

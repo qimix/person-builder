@@ -1,12 +1,10 @@
 public class PersonBuilder {
     protected String name;
     protected String surname;
-    protected int age;
+    protected Integer age;
     protected String address;
 
     public PersonBuilder() {
-        age = 0;
-        address = null;
     }
 
     public PersonBuilder setName(String name) {
@@ -31,14 +29,25 @@ public class PersonBuilder {
 
     public Person build() {
             Person person;
-            if (age == 0) {
+
+            if(name == null) {
+                throw new IllegalStateException("Не указано обязательное поле - имя");
+            } else if(surname == null){
+                throw new IllegalStateException("Не указано обязательное поле - фамилия");
+            } else if(age < 0){
+                throw new IllegalArgumentException("Неверные данные поля возраст");
+            }
+
+            if (age == null) {
                 person = new Person(name, surname);
             } else {
                 person = new Person(name, surname, age);
             }
+
             if (address != null) {
                 person.setAddress(address);
             }
+
             return person;
     }
 }
